@@ -1,0 +1,106 @@
+.mi_navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f80808; /* Col NavB */
+  color: white;
+  padding: 0.1rem 1rem;
+  font-family: sans-serif;
+}
+
+.logo {
+  font-size: 0.1rem;
+  font-weight: bold;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  gap: 1rem; /* Espacio entre los enlaces */
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: #113bf5; /* Cambia de color al pasar el mouse */
+}
+
+/* Quitar estilos por defecto del botón */
+.main-navigation-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos del Menú Lateral escondido */
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: 0; 
+  transform: translateX(-100%); /* Escondido fuera de la pantalla a la izquierda */
+  width: 250px;
+  height: 100vh;
+  background-color: #222; /* Gris muy oscuro */
+  color: white;
+  transition: transform 0.3s ease; /* Animación más suave */
+  z-index: 1000; /* Para que quede por encima de todo */
+  padding: 2rem 1rem;
+  box-sizing: border-box; /* Evita que el padding lo haga más ancho de 250px */
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+}
+
+/* Cuando Angular agrega la clase .abierto, lo metemos a la pantalla */
+.menu-lateral.abierto {
+  transform: translateX(0); 
+}
+
+.menu-lateral ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.menu-lateral li {
+  margin-bottom: 1.5rem;
+}
+
+.menu-lateral a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.cerrar-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  float: right;
+}
+
+/* El fondo oscuro semitransparente */
+.fondo-oscuro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+.Lizquierdo {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Este es el espacio entre el botón y el logo */
+}
