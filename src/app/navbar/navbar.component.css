@@ -49,13 +49,13 @@
   transform: translateX(-100%); /* Escondido fuera de la pantalla a la izquierda */
   width: 250px;
   height: 100vh;
-  background-color: #222; /* Gris muy oscuro */
+  background-color: #aa0707; /* Color de barra lateral */
   color: white;
   transition: transform 0.3s ease; /* Animación más suave */
   z-index: 1000; /* Para que quede por encima de todo */
-  padding: 2rem 1rem;
+  padding: 0.1rem 1rem;
   box-sizing: border-box; /* Evita que el padding lo haga más ancho de 250px */
-  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+  box-shadow: 2px 0 5px rgba(250, 247, 247, 0.5);
 }
 
 /* Cuando Angular agrega la clase .abierto, lo metemos a la pantalla */
@@ -95,12 +95,19 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(29, 29, 29, 0.5);
   z-index: 999;
 }
 
 .Lizquierdo {
   display: flex;
   align-items: center;
-  gap: 1rem; /* Este es el espacio entre el botón y el logo */
+  gap: 1rem; /* Espacio entre el botón y el logo */
 }
+
+.Logo2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
