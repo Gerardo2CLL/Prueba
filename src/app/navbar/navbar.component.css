@@ -43,7 +43,7 @@
 
 /* Estilos del Menú Lateral escondido */
 .menu-lateral {
-  position: fixed;
+  position:fixed;
   top: 0;
   left: 0; 
   transform: translateX(-100%); /* Escondido fuera de la pantalla a la izquierda */
@@ -53,9 +53,9 @@
   color: white;
   transition: transform 0.3s ease; /* Animación más suave */
   z-index: 1000; /* Para que quede por encima de todo */
-  padding: 0.1rem 1rem;
+  padding: 0.1rem 0.8rem;
   box-sizing: border-box; /* Evita que el padding lo haga más ancho de 250px */
-  box-shadow: 2px 0 5px rgba(250, 247, 247, 0.5);
+  box-shadow: 2px 0 5px rgba(255, 255, 255, 0.5);/*color al lado de barra lateral*/
 }
 
 /* Cuando Angular agrega la clase .abierto, lo metemos a la pantalla */
@@ -73,6 +73,7 @@
   margin-bottom: 1.5rem;
 }
 
+/*color de las letras del menu lateral*/
 .menu-lateral a {
   color: white;
   text-decoration: none;
@@ -82,7 +83,7 @@
 .cerrar-btn {
   background: none;
   border: none;
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 1.2rem;
   cursor: pointer;
   float: right;
