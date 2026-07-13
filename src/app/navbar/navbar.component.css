@@ -2,7 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f80808; /* Col NavB */
+  background-color: #CD1731;
+  /* Col NavB */
   color: white;
   padding: 0.1rem 1rem;
   font-family: sans-serif;
@@ -16,7 +17,8 @@
 .links {
   list-style: none;
   display: flex;
-  gap: 1rem; /* Espacio entre los enlaces */
+  gap: 1rem;
+  /* Espacio entre los enlaces */
   margin: 0;
   padding: 0;
   align-items: center;
@@ -28,7 +30,8 @@
 }
 
 .links a:hover {
-  color: #113bf5; /* Cambia de color al pasar el mouse */
+  color: #113bf5;
+  /* Cambia de color al pasar el mouse */
 }
 
 /* Quitar estilos por defecto del botón */
@@ -43,30 +46,36 @@
 
 /* Estilos del Menú Lateral escondido */
 .menu-lateral {
-  position:fixed;
+  position: fixed;
   top: 0;
-  left: 0; 
-  transform: translateX(-100%); /* Escondido fuera de la pantalla a la izquierda */
-  width: 250px;
+  left: 0;
+  transform: translateX(-100%);
+  /* Escondido fuera de la pantalla a la izquierda */
+  width: 300px;
   height: 100vh;
-  background-color: #aa0707; /* Color de barra lateral */
-  color: white;
-  transition: transform 0.3s ease; /* Animación más suave */
-  z-index: 1000; /* Para que quede por encima de todo */
-  padding: 0.1rem 0.8rem;
-  box-sizing: border-box; /* Evita que el padding lo haga más ancho de 250px */
-  box-shadow: 2px 0 5px rgba(255, 255, 255, 0.5);/*color al lado de barra lateral*/
+  background-color: #02172F;
+  /* Color de barra lateral */
+  color: rgb(253, 252, 252);
+  transition: transform 0.3s ease;
+  /* Animación más suave */
+  z-index: 1000;
+  /* Para que quede por encima de todo */
+  box-sizing: border-box;
+  /* Evita que el padding lo haga más ancho de 250px */
+  box-shadow: 2px 0 5px rgba(255, 255, 255, 0.5);
+  /*color al lado de barra lateral*/
 }
 
 /* Cuando Angular agrega la clase .abierto, lo metemos a la pantalla */
 .menu-lateral.abierto {
-  transform: translateX(0); 
+  transform: translateX(0);
 }
 
 .menu-lateral ul {
   list-style: none;
   padding: 0;
-  margin-top: 2rem;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 .menu-lateral li {
@@ -103,7 +112,18 @@
 .Lizquierdo {
   display: flex;
   align-items: center;
-  gap: 1rem; /* Espacio entre el botón y el logo */
+  gap: 1rem;
+  /* Espacio entre el botón y el logo */
+}
+
+.LizquierdoBLat {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* Espacio entre el botón y el logo */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  /* Línea blanca semitransparente */
+  padding: 0.1rem 0.8rem;
 }
 
 .Logo2 {
@@ -112,3 +132,52 @@
   gap: 1rem;
 }
 
+.opciones-menu1 {
+  display: flex;
+  flex-direction: row;
+  gap: 0rem; /* Espacio entre las palabras */
+  list-style: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Línea blanca semitransparente */
+}
+
+.opciones-menu1 li {
+  margin-bottom: 0;
+  font-family: "titillium-web", "helvetica neue lighter", sans-serif;
+  font-weight: bold;
+  padding-left: 1rem;
+  padding-bottom: 12px;  /* Espaciado abajo de cada texto */
+}
+
+.opciones-menu1 li a {
+  color: white;
+  font-size: 15px; /* Tamaño adecuado para que quepan en horizontal */
+  text-decoration: none;
+  padding-bottom: 4px; /* Separación entre la palabra y la línea roja */
+}
+
+/* Línea roja gruesa para la primera opción (simulando que está activa) */
+.opciones-menu1 li:first-child a {
+  border-bottom: 3px solid #CD1731;
+}
+
+/* (Opcional) Que la línea roja también aparezca al pasar el mouse en los demás */
+.opciones-menu1 li a:hover {
+  border-bottom: 3px solid #CD1731;
+}
+
+/* Estilos para las líneas separadoras en barra lateral */
+.opciones-menu2 li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Línea blanca semitransparente */
+  margin-bottom: 10px; /* Espacio arriba de cada texto */
+  padding-bottom: 10px;  /* Espaciado abajo de cada texto */
+  padding-left: 1rem;  /*Espaciado a la izquierda de cada texto*/
+  font-size: 24px;
+  font-family: "titillium-web", "helvetica neue lighter", sans-serif;
+  font-weight: bold;
+}
+
+/* Para que la última opción no tenga línea debajo */
+.opciones-menu2 li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
