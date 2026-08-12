@@ -226,6 +226,19 @@
         </defs>
       </svg>
       <h1>Hola, Bienvenido a {{ title }}</h1>
+      <!-- si la conexion fue exitosa -->
+      @if(statusBackend){
+        <div class="status-backend">
+          <strong>Conectado al Backend:</strong> {{ statusBackend.estado }}<br>
+          <small>Hora de respuests: {{ statusBackend.timestamp }}</small>
+        </div>
+      }
+      <!-- si la conexion no fue exitosa -->
+      @if(errorConexion){
+        <div class="status-backend">
+          <strong>Error:</strong> {{ errorConexion }}<br>
+        </div>
+      }
       <p>La app esta en curso. 🥵</p>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
