@@ -1,1 +1,20 @@
-<p>calendario-chivas works!</p>
+<section>
+  <h2>Calendario de Chivas</h2>
+
+  @if (cargando) {
+    <p>Cargando partidos...</p>
+  } @else if (error) {
+    <p>{{ error }}</p>
+  } @else if (partidos.length === 0) {
+    <p>No hay partidos registrados.</p>
+  } @else {
+    @for (partido of partidos; track partido.id) {
+      <article>
+        <h3>Jornada {{ partido.jornada }}</h3>
+        <p>{{ partido.local_nombre }} vs {{ partido.visitante_nombre }}</p>
+        <p>Fecha: {{ partido.fecha }}</p>
+        <p>Estadio: {{ partido.estadio }}</p>
+      </article>
+    }
+  }
+</section>
