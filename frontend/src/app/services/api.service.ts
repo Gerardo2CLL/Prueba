@@ -1,6 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Partido } from '../core/models/partido.model';
+import { EquipoTabla } from '../core/models/equipo-tabla.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +21,14 @@ export class ApiService {
     //metodo para vrificar conexion a bd sql
     testDb(): Observable<any>{
     return this.http.get(`${this.apiUrl}/test-db`);
+    }
+    //metodo para obtener el calendario de partidos
+    getCalendarioChivas(): Observable<Partido[]> {
+    return this.http.get<Partido[]>(`${this.apiUrl}/calendario/chivas`);
+    }
+    //metodo para obtener la tabla de posiciones
+    getTablaGeneral(): Observable<EquipoTabla[]> {
+    return this.http.get<EquipoTabla[]>(`${this.apiUrl}/tabla-general`);
     }
 
   constructor() { }

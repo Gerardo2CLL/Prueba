@@ -22,6 +22,35 @@ app.get('/api/status', (req, res) => {
   });
 });
 
+// ruta para obtener partidos de la base de datos
+app.get('/api/calendario/chivas', async (req, res) => {
+  try {
+    const [rows] = await db.query('SELECT * FROM partidos WHERE es_chivas = true ORDER BY fecha ASC;');
+    res.json(rows);
+  } catch (error) {
+    console.error('Error al obtener partidos de Chivas:', error);
+    res.status(500).json({
+      error: 'No se pudo obtener los partidos de Chivas',
+      detalle: error.message
+    });
+  }
+});
+
+//ruta para obtener la tabla de posiciones de la base de datos
+app.get('/api/tabla-general', async (req, res) => {
+  try {
+    const [rows] = await db.query('SELECT * FROM tabla_general ORDER BY posicion ASC;');
+    res.json(rows);
+  } catch (error) {
+    console.error('Error al obtener la tabla de posiciones:', error);
+    res.status(500).json({
+      error: 'No se pudo obtener la tabla de posiciones',
+      detalle: error.message
+    });
+  }
+});
+
+
 // Ruta para probar la conexión con la base de datos SQL
 app.get('/api/test-db', async (req, res) => {
   try {
